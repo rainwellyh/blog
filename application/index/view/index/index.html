@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+        <meta name="description" content="blogs">
+        <meta name="author" content="yuhao">
+        <title>yuhao blogs</title>
+
+         <!-- Bootstrap -->
+        <link href="__STATIC__/index/css/bootstrap.min.css" rel="stylesheet">
+        <link href="__STATIC__/index/font-awesome-4.7.0/css/font-awesome.css" rel="stylesheet" > 
+        <!--我自己的-->
+        <link href="__STATIC__/index/mystyle/my.css" rel="stylesheet">
+        
+        <!-- HTML5 shim 和 Respond.js 是为了让 IE8 支持 HTML5 元素和媒体查询（media queries）功能 -->
+        <!-- 警告：通过 file:// 协议（就是直接将 html 页面拖拽到浏览器中）访问页面时 Respond.js 不起作用 -->
+        <!--[if lt IE 9]>
+            <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+        <![endif]-->
+    </head>
+
+    <body>
+    <!--全局背景-->
+        <div class="Yuhao_Background" style="background-image: url(__STATIC__/index/images/body_bg.jpg);"></div>
+        <!--顶部模板-->
+        {include file="common/header" /}
+
+
+
+
+<div class="container ymove">
+            <div class="row row-offcanvas row-offcanvas-right">
+                                             <!--文字的轮播-->
+		                    {include file="common/roll" /}
+                                            <!--//文字的轮播-->
+                <div class="col-xs-12 col-sm-9 ylunbopadding">                                      
+                            <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="5000"> 
+                                <!-- 轮播（Carousel）指标 -->
+                                <ol class="carousel-indicators">
+                                    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                                    <li data-target="#myCarousel" data-slide-to="1"></li>
+                                    <li data-target="#myCarousel" data-slide-to="2"></li>
+                                </ol>   
+                                <!-- 轮播（Carousel）项目 -->
+                                <div class="carousel-inner">
+                                        <div class="item active">
+                                            <img src="__STATIC__/index/images/lunbo5.gif" alt="First slide">
+                                            <div class="carousel-caption"></div>
+                                        </div>
+                                        <div class="item">
+                                            <img src="__STATIC__/index/images/lunbo3.gif" alt="Second slide">
+                                            <div class="carousel-caption"></div>
+                                        </div>
+                                        <div class="item">
+                                            <img src="__STATIC__/index/images/lunbo4.gif" alt="Third slide">
+                                            <div class="carousel-caption">标题 3</div>
+                                        </div>
+                                </div><!-- 轮播//（Carousel）项目 -->
+                                <!-- 轮播（Carousel）导航 -->
+                                <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+                                    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                                    <span class="sr-only">Previous</span>
+                                </a>
+                                <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+                                    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                                    <span class="sr-only">Next</span>
+                                </a>
+                            </div> <!--// myCarousel -->
+
+                  </div><!--// col-xs-12 col-sm-9  ylunbopadding-->
+
+                 <!--右侧列表1-->
+                <div class="col-xs-6 col-sm-3 sidebar-offcanvas y-list-1">
+                        <div class="y-list-content">
+                            <div class="ab-title">--关于我--</div>
+                            <div class="ab-img">
+                                <a href="" target=""><img src="__STATIC__/index/images/psb.jpg" alt="me"></a>
+                            </div>
+                            <div class="ab-con">
+                                <p>姓名：余浩</p>
+                                <p>地址：湖北中医药大学</p>
+                                <p>邮箱：rainwell@qq.com</p>
+                            </div>
+                        </div>   
+                </div><!--//右侧列表1-->
+<br>
+
+                <div class="col-xs-12 col-sm-9">   
+                        <!--博主置顶-->
+                        <div class="panel panel-default contenttop">
+                            <a href="###">
+                                <strong>博主置顶</strong>
+                                <h3 class="title">嫁人就嫁程序员</h3>
+                                <p class="overView">个人网站正在建设中.....(哈哈哈哈哈哈)</p>
+                            </a>
+                        </div>
+                        <!--//博主置顶-->
+
+                     	<div class="yrecommendheader"><!--推荐<img src="__STATIC__/index/images/navtitle.jpg" alt="红色空心圆圈">-->
+                     	            <div class="ynavtitle"><i class="fa fa-eercast" aria-hidden="true" style="color:#c24545"></i>&nbsp;我的&nbsp;&nbsp;</div>
+                     		<ul id="myTab" class="nav nav-tabs">
+			    <li class="active">
+			        <a href="#ystudy" data-toggle="tab">
+			            学习
+			        </a>
+			    </li>
+			    <li><a href="#ylife" data-toggle="tab">生活</a></li>
+			    <li><a href="#yemotion" data-toggle="tab">情感</a></li>
+			</ul>
+          
+			<div id="myTabContent" class="tab-content">
+			    <div class="tab-pane fade in active" id="ystudy">
+			        	<div class="row">
+                                                               {volist name='articles' id='value'}   
+		                                      <div class="col-xs-10 col-xs-offset-1 article-con">
+        		                                              <div class="article-left">                
+                                                                                <h4><a target="_blank" href="{:url('article/index',array('aim'=>$value.id))}">{$value.title}</a></h4>
+                                                                                <p>
+                                                                                    <a href="###" class="label label-default">{$value.keywords}</a>
+                                                                                </p>
+                                                                                <p>{$value.desc}</p>
+                                                                                <p>
+                                                                                    <span class="p-count"><i class="glyphicon glyphicon-user"></i>
+                                                                                         <a href="#">{$value.author}</a>
+                                                                                    </span>
+                                                                                    <span class="p-count"><i class="glyphicon glyphicon-eye-open"></i>阅读:{$value.click}</span>
+                                                                                    <span class="p-count"><i class="glyphicon glyphicon-comment"></i>评论:2</span>
+                                                                                    <span class="p-count"><i class="glyphicon glyphicon-time"></i>{$value.time|date='Y-m-d',###}</span>
+                                                                                </p>
+                                                                        </div>  <!--//article-left-->
+
+                                                                        <div class="article-img">
+                                                                                <a target="_blank" href="{:url('article/index',array('arid'=>$value.id))}">
+                                                                                  <img src="{if condition="$value['pic'] neq '' "}__STATIC__/{$value.pic} 
+                                                                                  {else /}__STATIC__/index/images/error.png{/if} " alt="{$value.title}"/>
+                                                                                </a>
+                                                                        </div>
+		                                      </div>  <!--//col-xs-10 col-xs-offset-1 article-con-->
+                                                               {/volist}       
+
+                                                               <!--分页-->
+                                                               <div class="col-xs-6">  
+                                                                    {$articles->render()}  
+                                                               </div>
+                                                                                                            
+		                         </div><!--//row-->
+			    </div>
+
+			    <div class="tab-pane fade" id="ylife">
+			        	<div class="row">
+		                                      <div class="col-xs-10 col-xs-offset-1 article-con">
+                                                                        <div class="article-left">
+                                                                                <h4>嫁人就嫁程序员</h4>
+                                                                                <p>
+                                                                                    <a href="###" class="label label-default">life</a>
+                                                                                    <a href="###" class="label label-default">emotion</a>
+                                                                                </p>
+                                                                                <p>程序员是个好人，对他是个好人，对的，没错，他是一个好人</p>
+                                                                                <p>
+                                                                                    <span class="p-count"><i class="glyphicon glyphicon-user"></i><a href="#">hao</a></span> 
+                                                                                    <span class="p-count"><i class="glyphicon glyphicon-eye-open"></i>阅读:1003</span>
+                                                                                    <span class="p-count"><i class="glyphicon glyphicon-comment"></i>评论:2</span>
+                                                                                    <span class="p-count"><i class="glyphicon glyphicon-time"></i>2017-01-16</span>
+                                                                                </p>
+                                                                        </div> <!--//article-left-->
+
+                                                                        <div class="article-img">
+                                                                                <img src="__STATIC__/index/images/p1.jpg" alt="">
+                                                                        </div>
+                                                               </div>                   
+		                         </div><!--//row-->
+			    </div>
+			    <div class="tab-pane fade" id="yemotion">
+			        	<div class="row">
+		                              	<div class="col-xs-10 col-xs-offset-1 article-con">
+        		                                              <div class="article-left">
+                                                                                <h4>嫁人就嫁程序员</h4>
+                                                                                <p>
+                                                                                    <a href="###" class="label label-default">life</a>
+                                                                                    <a href="###" class="label label-default">emotion</a>
+                                                                                </p>
+                                                                                <p>程序员是个好人，对他是个好人，对的，没错，他是一个好人</p>
+                                                                                <p>
+                                                                                    <span class="p-count"><i class="glyphicon glyphicon-user"></i><a href="#">yu</a></span>
+                                                                                    <span class="p-count"><i class="glyphicon glyphicon-eye-open"></i>阅读:1003</span>
+                                                                                    <span class="p-count"><i class="glyphicon glyphicon-comment"></i>评论:2</span>
+                                                                                    <span class="p-count"><i class="glyphicon glyphicon-time"></i>2017-01-16</span>
+                                                                                </p>
+                                                                        </div>  <!--//article-left-->
+
+                                                                        <div class="article-img">
+                                                                                <img src="__STATIC__/index/images/p2.jpg" alt="">
+                                                                        </div>
+		                              	</div>                         
+		                         </div><!--//row-->
+			    </div>
+
+			</div><!--//tab-content-->
+                     	</div><!--//yrecommendheader1-->                                                                
+                </div><!--//col-xs-12 col-sm-9-->
+
+                <!--右侧列表-->
+                {include file="common/right" /}
+                <!--//右侧列表-->
+
+            </div><!--//row row-offcanvas row-offcanvas-right-->
+   
+</div><!--//container ymove-->
+
+            <!--页脚开始-->
+            {include file="common/footer" /}
+            <!--//页脚结束-->
+
+    </body>
+</html>

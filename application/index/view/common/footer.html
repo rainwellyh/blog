@@ -1,0 +1,60 @@
+<!--页脚开始-->
+            <footer class="yfooter">
+                <div class="container">
+                        <div class="row">
+                                <div class="col-xs-2 col-sm-3 col-md-4">
+                                        <h6> &copy;yuhao</h6>
+                                </div>
+                                
+
+                                <div class="col-xs-8 col-sm-6 col-md-4">
+                                    <div class="social-icons">
+                                        <ul  id="aaa"><!--锚点防止点击图标上弹-->
+                                             <li>
+                                                <a href="#aaa" class="fa fa-qq"></a>
+                                                <div class="yqq">
+                                                    <img src="__STATIC__/index/images/qq.jpg" alt="1262172637">
+                                                </div>
+                                             </li>
+                                            <li><a href="#aaa" class="fa fa-wechat"><img src="__STATIC__/index/images/wechat.jpg" ></a></li>
+                                            <li><a href="#aaa" class="fa fa-weibo"><img src="__STATIC__/index/images/weibo.jpg" ></a></li>   
+                                            <li><a href="#aaa" class="fa fa-jpy"><img src="__STATIC__/index/images/zfb.jpg" ></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <div class="col-xs-2 col-sm-3 col-md-4">   
+                                </div>
+                             
+                                
+                        </div>
+                </div>
+            </footer><!--//页脚结束-->
+
+
+        <!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) -->
+        <script src="__STATIC__/index/js/jquery-1.11.1.min.js"></script>
+        <!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 -->
+        <script src="__STATIC__/index/js/bootstrap.min.js"></script>
+
+        <!--jquery滚动的字幕-->
+        <script type="text/javascript" src="__STATIC__/index/mystyle/myslideup.js"></script>
+        <script type="text/javascript">
+        $(function(){
+            $(".line").slideUp();   
+        })
+        </script>
+
+        <!--右侧列表-->
+        <script>
+            $(document).ready(function () {
+                $('[data-toggle="offcanvas"]').click(function () {
+                    $('.row-offcanvas').toggleClass('active')
+                });
+            });
+        </script>
+    
+        <!--导航栏提示-->
+        <script>
+    	$(function () { $("[data-toggle='tooltip']").tooltip(); });
+        </script>

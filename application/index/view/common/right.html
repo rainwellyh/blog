@@ -1,0 +1,31 @@
+<!--右侧推荐-->
+<div class="col-xs-6 col-sm-3 sidebar-offcanvas y-list-1">
+         <div class="yright">
+                 <p>欢迎登录,登录之后可以评论留言哦</p>   
+                 <center><button type="button" class="btn btn-danger">&nbsp; 登录 &nbsp;</button> </center>         
+         </div>
+                
+         <div class="panel panel-default">
+                <div class="panel-heading"><i class="fa fa-fire" aria-hidden="true" style="color:#c24545"></i>&nbsp; 热门点击</div>
+                <ul class="list-group">
+	              {volist name='clicks' id='value'}   
+	            		 <a href="{:url('article/index',array('arid'=>$value['id']))}" target="_blank" class="list-group-item" title="{$value.title}">
+	        		 <span>{$value.title}</span>
+	             	</a>  
+	              {/volist}           
+                         <li class="list-group-item">&nbsp;</li>
+                </ul>
+
+                <div class="panel-heading"><i class="fa fa-heart" aria-hidden="true" style="color:#c24545"></i>&nbsp; 推荐阅读</div>
+                <ul class="list-group">
+                     <!--   <span class="badge">新</span> -->
+	     {volist name='recs' id='value'}
+	     <a href="{:url('article/index',array('arid'=>$value['id']))}" class="list-group-item" target="_blank" title="{$value.title}">
+	          <span>{$value.title}</span>
+	     </a>     
+	     {/volist}                                             
+                </ul>
+            </div>
+</div>
+
+<!--//右侧推荐-->

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+        <meta name="description" content="blogs">
+        <meta name="author" content="yuhao">
+        <title>article</title>
+
+         <!-- Bootstrap -->
+        <link href="__STATIC__/index/css/bootstrap.min.css" rel="stylesheet">
+        <link href="__STATIC__/index/font-awesome-4.7.0/css/font-awesome.css" rel="stylesheet"> 
+        <link href="__STATIC__/index/mystyle/my.css" rel="stylesheet">
+        <link href="__STATIC__/index/mystyle/article.css" rel="stylesheet">
+        
+        <!-- HTML5 shim 和 Respond.js 是为了让 IE8 支持 HTML5 元素和媒体查询（media queries）功能 -->
+        <!-- 警告：通过 file:// 协议（就是直接将 html 页面拖拽到浏览器中）访问页面时 Respond.js 不起作用 -->
+        <!--[if lt IE 9]>
+            <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+        <![endif]-->
+    </head>
+
+    <body>
+    <!--全局背景-->
+            <div class="Yuhao_Background" style="background-image: url(__STATIC__/index/images/body_bg.jpg);"></div>
+              <!--顶部模板-->
+              {include file="common/header" /}
+
+<div class="container ymove">
+            <div class="row row-offcanvas row-offcanvas-right">
+	            <!--文字的轮播-->
+                         {include file="common/roll" /}
+                        <!--//文字的轮播-->
+              
+
+             <div class="col-xs-12 col-sm-9">   
+                 <div class="position">
+                     <a href="{:url('index/index')}">主页</a>
+                         > 
+                     <a href="{:url('cate/index',array('cateid'=>$cateres['id']))}">{$cateres.catename}</a>
+                         >  
+                 </div>
+
+
+                <div class="overall">
+                            <div class="left">
+                                         <div class="scrap">
+                                            <h1>{$articleres.title}</h1>
+                                            <div class="spread">
+                                                <span class="writor">发布时间：{$articleres.time|date='Y-m-d',###}</span>
+                                                <span class="writor">编辑：{$articleres.author}</span>
+                                                <span class="writor">标签：
+                                                    <?php 
+                                                        $arr=explode(',',$articleres['keywords']);
+                                                        foreach($arr as $k => $v){
+                                                            echo "<a href='#'>$v</a>";
+                                                        }
+                                                    ?>
+                                                </span>
+                                                <span class="writor">热度：{$articleres.click}</script></span>
+                                            </div>
+                                         </div><!--//scrap-->
+
+                                        <div class="takeaway">
+                                            <span class="btn arr-left"></span>
+                                            <p class="jjxq">{$articleres.desc}
+                                            </p>
+                                            <span class="btn arr-right"></span>
+                                        </div>
+
+                                        <!-- 文章主体 -->
+                                        <div class="substance">
+                                            {$articleres.content}
+                                        </div>
+                                        <!-- end文章主体 -->
+
+                                        <!--相关阅读 -->
+                                        <div class="xgread">
+                                            <div class="til"><h4>相关阅读</h4></div>
+                                            <div class="lef"><!--相关阅读主题链接--><script src='/jiehun/goto/my-65540.js' language='javascript'></script></div>
+                                            <div class="rig">
+                                                <ul>
+                                                    {volist name="ralateres" id="value"}
+                                                        <li><a href='{:url('article/index',array('arid'=>$value['id']))}' target="_blank">{$value.title}</a></li>
+                                                    {/volist}
+                                                    
+                                                </ul>
+                                            </div>
+                                        </div>  <!--//相关阅读 -->
+
+                                        <!--频道推荐-->
+                                        <div class="hotsnew">
+                                            <div class="til"><h4>频道推荐</h4></div>
+                                            <ul>
+                                                {volist name='recres' id='value' }
+                                                <li>
+                                                    <div class="tu">
+                                                        <a href='{:url('article/index',array('arid'=>$value.id))}' target="_blank">
+                                                            <img src="{if condition="$value['pic'] neq '' "}__IMG__{$value.pic} {else /}__PUBLIC__/images/error.png{/if} " alt="{$value.title}"/>
+                                                        </a>
+                                                    </div>
+                                                    <p><a href='{:url('article/index',array('arid'=>$value.id))}'>{$value.title}</a></p>
+                                                </li>
+                                                {/volist}
+                                            </ul>
+                                        </div> <!--//频道推荐-->  
+
+                            </div><!--//left-->
+                </div><!--//overall-->
+                     	                                                        
+            </div><!--//col-xs-12 col-sm-9-->
+
+            <!--右侧列表-->
+            {include file="common/right" /}
+            <!--//右侧列表-->
+
+            </div><!--//row row-offcanvas row-offcanvas-right-->
+   
+</div><!--//container ymove-->
+
+            <!--页脚开始-->
+             {include file="common/footer" /}
+            <!--//页脚结束-->
+
+    </body>
+</html>
